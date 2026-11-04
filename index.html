@@ -1,289 +1,1347 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ALEX | Digital Services</title>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#07090f">
+<meta name="description" content="ALEX — استوديو التصميم والحلول الرقمية.">
+<title>ALEX | Digital Studio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:#070b12;color:#fff;font-family:Cairo,sans-serif}
-:root{--blue:#168dff;--cyan:#42ddff;--muted:#9aabba}
-.container{width:92%;max-width:1150px;margin:auto}
-header{position:sticky;top:0;background:#070b12ed;backdrop-filter:blur(15px);z-index:10;border-bottom:1px solid #42ddff30}
-nav{height:75px;display:flex;align-items:center;justify-content:space-between}
-.brand{font-size:27px;font-weight:900;letter-spacing:3px}
-.brand span{color:var(--cyan)}
-nav a{color:white;text-decoration:none;margin:0 9px;font-size:14px}
-nav a:hover{color:var(--cyan)}
-.btn{display:inline-block;padding:13px 24px;border:0;border-radius:12px;background:linear-gradient(110deg,var(--cyan),var(--blue));color:#00101b;font-family:inherit;font-weight:900;text-decoration:none;cursor:pointer;transition:.3s}
-.btn:hover{transform:translateY(-4px);box-shadow:0 8px 30px #168dff66}
-.hero{text-align:center;padding:65px 15px 90px;background:radial-gradient(ellipse at top,#07334d,transparent 65%)}
-.logo{width:min(580px,95%);height:auto;display:block;margin:0 auto 25px;mix-blend-mode:screen;filter:drop-shadow(0 0 25px #00bfff55)}
-.badge{display:inline-block;padding:8px 18px;border:1px solid #42ddff55;border-radius:30px;color:var(--cyan);font-size:13px}
-h1{font-size:clamp(30px,5vw,55px);margin:20px 0}
-.gradient{background:linear-gradient(90deg,#fff,#42ddff,#168dff);-webkit-background-clip:text;color:transparent}
-.hero p{color:var(--muted);line-height:2;max-width:720px;margin:auto}
-.actions{margin-top:30px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-.outline{background:transparent;color:var(--cyan);border:1px solid var(--cyan)}
-section{padding:75px 0}
-.heading{text-align:center;margin-bottom:35px}
-.heading small{color:var(--cyan);font-weight:bold}
-.heading h2{font-size:35px;margin:10px}
-.heading p{color:var(--muted)}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.card{background:linear-gradient(145deg,#122338,#0a111c);border:1px solid #42ddff25;border-radius:20px;padding:25px;transition:.3s}
-.card:hover{transform:translateY(-7px);border-color:#42ddff88;box-shadow:0 15px 40px #0008}
-.icon{width:50px;height:50px;border-radius:14px;background:#0b2b40;color:var(--cyan);display:grid;place-items:center;font-size:24px;margin-bottom:15px}
-.card h3{margin-bottom:10px;font-size:18px}
-.card p{color:var(--muted);font-size:13px;line-height:2}
-.tag{color:var(--cyan);font-size:11px;background:#102b3a;padding:6px 12px;border-radius:20px;display:inline-block;margin-top:15px}
-.note{background:#0b1a27;border:1px solid #42ddff44;padding:18px;border-radius:14px;margin-top:25px;color:#c5dce8;font-size:13px;line-height:2}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
-.step{background:#101d2c;padding:20px;border:1px solid #42ddff25;border-radius:15px}
-.number{font-size:30px;color:var(--cyan);font-weight:900}
-.step h3{margin:8px 0}
-.step p{color:var(--muted);font-size:13px;line-height:1.8}
-.cta{text-align:center;padding:50px 20px;border:1px solid #42ddff55;border-radius:25px;background:radial-gradient(circle at top,#104263,#0b1420 70%)}
-.cta h2{font-size:32px;margin-bottom:15px}
-.cta p{color:var(--muted);line-height:2;margin-bottom:25px}
-footer{border-top:1px solid #42ddff22;padding:25px;text-align:center;color:var(--muted);font-size:12px}
-.modal{display:none;position:fixed;inset:0;background:#000d;z-index:20;align-items:center;justify-content:center;padding:15px}
-.modal.show{display:flex}
-.modal-box{background:#101d2c;padding:25px;border:1px solid #42ddff55;border-radius:20px;width:min(500px,100%)}
-.modal-box h2{margin-bottom:20px}
-.close{float:left;background:#172637;color:white;border:0;padding:7px 13px;border-radius:8px;cursor:pointer}
-label{display:block;font-size:13px;margin:12px 0 5px}
-input,select,textarea{width:100%;padding:13px;background:#07111c;border:1px solid #29465b;color:white;border-radius:10px;font:inherit}
-textarea{height:100px}
-@media(max-width:800px){.grid{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}nav a{font-size:11px;margin:0 3px}}
-@media(max-width:550px){.grid{grid-template-columns:1fr}nav{height:auto;min-height:65px}nav .links{display:none}.heading h2{font-size:27px}}
+:root {
+--bg:#07090f;
+--panel:#0d111b;
+--panel2:#111827;
+--blue:#58baff;
+--cyan:#8ce4ff;
+--white:#f5f8fc;
+--muted:#9aa8b9;
+--line:rgba(117,185,255,.17);
+--gold:#d8c08a;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+
+body{
+margin:0;
+background:var(--bg);
+color:var(--white);
+font-family:'Cairo',sans-serif;
+overflow-x:hidden;
+}
+
+body:before{
+content:"";
+position:fixed;
+inset:0;
+z-index:-2;
+pointer-events:none;
+background:
+radial-gradient(ellipse at 15% 8%,#124d7a35,transparent 35%),
+radial-gradient(ellipse at 85% 45%,#153c6530,transparent 38%),
+linear-gradient(#ffffff03 1px,transparent 1px),
+linear-gradient(90deg,#ffffff03 1px,transparent 1px);
+background-size:auto,auto,54px 54px,54px 54px;
+}
+
+body:after{
+content:"";
+position:fixed;
+inset:0;
+z-index:-1;
+pointer-events:none;
+background:linear-gradient(180deg,transparent 70%,#07090f 100%);
+}
+
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+
+.container{
+width:min(1160px,calc(100% - 40px));
+margin:auto;
+}
+
+/* NAVIGATION */
+
+.nav{
+position:fixed;
+top:0;
+right:0;
+left:0;
+z-index:30;
+background:#07090fc2;
+backdrop-filter:blur(20px);
+border-bottom:1px solid #ffffff0b;
+}
+
+.nav-inner{
+height:78px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:20px;
+}
+
+.brand{
+display:flex;
+align-items:center;
+gap:11px;
+font-family:Manrope,Cairo,sans-serif;
+font-size:23px;
+font-weight:900;
+letter-spacing:3px;
+}
+
+.brand-symbol{
+width:37px;
+height:37px;
+border:1px solid #66c7ff88;
+border-radius:12px;
+display:grid;
+place-items:center;
+color:var(--cyan);
+box-shadow:0 0 24px #168dff25;
+font-size:18px;
+}
+
+.nav-links{
+display:flex;
+align-items:center;
+gap:29px;
+color:#aab8c9;
+font-size:13px;
+}
+
+.nav-links a{transition:.25s}
+.nav-links a:hover{color:var(--cyan)}
+
+.nav-side{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.nav-cta,.btn{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+gap:9px;
+padding:12px 20px;
+border-radius:11px;
+background:linear-gradient(115deg,#a9e8ff,#4baeff 55%,#2879d8);
+color:#06111d;
+font-weight:900;
+font-size:13px;
+box-shadow:0 8px 30px #238fe833;
+transition:.25s;
+border:0;
+cursor:pointer;
+}
+
+.nav-cta:hover,.btn:hover{
+transform:translateY(-3px);
+box-shadow:0 12px 35px #238fe855;
+}
+
+/* THREE LINES MENU */
+
+.menu-toggle{
+width:44px;
+height:44px;
+border:1px solid var(--line);
+border-radius:13px;
+background:#101724;
+color:white;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+gap:5px;
+cursor:pointer;
+transition:.25s;
+}
+
+.menu-toggle:hover{
+border-color:#65caff88;
+background:#142235;
+}
+
+.menu-toggle span{
+display:block;
+width:19px;
+height:2px;
+border-radius:4px;
+background:var(--cyan);
+transition:.25s;
+}
+
+.menu-toggle.active span:nth-child(1){
+transform:translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2){opacity:0}
+
+.menu-toggle.active span:nth-child(3){
+transform:translateY(-7px) rotate(-45deg);
+}
+
+.mobile-menu{
+position:absolute;
+top:78px;
+right:20px;
+width:min(300px,calc(100% - 40px));
+padding:14px;
+background:#0c1320f5;
+border:1px solid var(--line);
+border-radius:17px;
+box-shadow:0 20px 60px #000b;
+display:none;
+}
+
+.mobile-menu.open{
+display:grid;
+animation:drop .22s ease;
+}
+
+.mobile-menu a{
+padding:12px 13px;
+border-radius:10px;
+color:#c4d2e0;
+font-size:14px;
+}
+
+.mobile-menu a:hover{
+background:#17283a;
+color:var(--cyan);
+}
+
+@keyframes drop{
+from{opacity:0;transform:translateY(-8px)}
+to{opacity:1;transform:translateY(0)}
+}
+
+/* HERO */
+
+.hero{
+min-height:760px;
+padding:155px 0 95px;
+display:flex;
+align-items:center;
+position:relative;
+text-align:center;
+overflow:hidden;
+}
+
+.hero:before{
+content:"";
+position:absolute;
+width:650px;
+height:650px;
+border:1px solid #68c8ff12;
+border-radius:50%;
+top:100px;
+left:50%;
+transform:translateX(-50%);
+box-shadow:0 0 0 65px #68c8ff05,0 0 0 130px #68c8ff03;
+pointer-events:none;
+}
+
+.hero-content{
+position:relative;
+z-index:1;
+width:100%;
+}
+
+.status{
+display:inline-flex;
+align-items:center;
+gap:9px;
+padding:8px 15px;
+border:1px solid var(--line);
+border-radius:99px;
+background:#0e1a29a8;
+color:#b9d9ef;
+font-size:11px;
+font-weight:700;
+}
+
+.status i{
+width:7px;
+height:7px;
+border-radius:50%;
+background:#5de4ac;
+box-shadow:0 0 13px #5de4ac;
+display:inline-block;
+}
+
+.hero-logo{
+width:min(460px,83%);
+height:auto;
+display:block;
+margin:26px auto 14px;
+mix-blend-mode:screen;
+filter:drop-shadow(0 0 34px #38aaff35);
+}
+
+.hero h1{
+font-size:clamp(31px,5vw,58px);
+line-height:1.35;
+font-weight:900;
+margin:13px 0;
+}
+
+.hero h1 span,.gradient{
+background:linear-gradient(100deg,#f5fbff,#8ddfff 42%,#438fff);
+-webkit-background-clip:text;
+background-clip:text;
+color:transparent;
+}
+
+.hero p{
+max-width:690px;
+margin:0 auto;
+color:var(--muted);
+font-size:15px;
+line-height:2.2;
+}
+
+.hero-actions{
+display:flex;
+justify-content:center;
+gap:12px;
+flex-wrap:wrap;
+margin-top:28px;
+}
+
+.btn-secondary{
+background:#111a28;
+color:#d8efff;
+border:1px solid var(--line);
+box-shadow:none;
+}
+
+.hero-stats{
+display:flex;
+justify-content:center;
+gap:45px;
+flex-wrap:wrap;
+margin-top:58px;
+}
+
+.stat{min-width:110px}
+
+.stat strong{
+display:block;
+font:800 25px Manrope,Cairo,sans-serif;
+color:#e7f6ff;
+}
+
+.stat span{
+font-size:11px;
+color:#8294a9;
+}
+
+/* SECTIONS */
+
+section{padding:92px 0}
+
+.section-head{
+text-align:center;
+margin-bottom:39px;
+}
+
+.kicker{
+color:var(--cyan);
+font:800 10px Manrope,Cairo,sans-serif;
+letter-spacing:2px;
+text-transform:uppercase;
+}
+
+.section-head h2{
+font-size:clamp(27px,4vw,39px);
+margin:8px 0 7px;
+font-weight:900;
+}
+
+.section-head p{
+margin:0;
+color:var(--muted);
+font-size:13px;
+line-height:2;
+}
+
+/* SERVICES */
+
+.services-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:16px;
+}
+
+.service{
+position:relative;
+padding:25px 23px 22px;
+min-height:220px;
+border:1px solid var(--line);
+border-radius:18px;
+background:linear-gradient(145deg,#111a29e8,#0a101aeb);
+overflow:hidden;
+transition:.3s;
+}
+
+.service:after{
+content:"";
+position:absolute;
+width:120px;
+height:120px;
+left:-50px;
+bottom:-65px;
+background:#37aaff18;
+filter:blur(25px);
+border-radius:50%;
+}
+
+.service:hover{
+transform:translateY(-6px);
+border-color:#62c9ff66;
+box-shadow:0 20px 45px #0006;
+}
+
+.service-top{
+display:flex;
+align-items:center;
+justify-content:space-between;
+margin-bottom:20px;
+}
+
+.service-icon{
+width:48px;
+height:48px;
+display:grid;
+place-items:center;
+border-radius:14px;
+background:#112b42;
+border:1px solid #65caff35;
+color:var(--cyan);
+font-size:22px;
+}
+
+.service-index{
+font:700 11px Manrope,sans-serif;
+color:#526a80;
+}
+
+.service h3{
+font-size:16px;
+margin:0 0 7px;
+}
+
+.service p{
+font-size:12px;
+line-height:2;
+color:var(--muted);
+margin:0;
+}
+
+.service .mini{
+display:inline-block;
+margin-top:14px;
+color:#8ddfff;
+font-size:10px;
+}
+
+/* PRICING */
+
+.pricing-wrap{
+background:linear-gradient(180deg,transparent,#0b1420 45%,transparent);
+}
+
+.pricing-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:17px;
+align-items:stretch;
+}
+
+.price-card{
+position:relative;
+padding:29px 25px;
+border:1px solid var(--line);
+border-radius:20px;
+background:linear-gradient(155deg,#121c2b,#0a101a);
+overflow:hidden;
+}
+
+.price-card.featured{
+border-color:#60c5ff8c;
+box-shadow:0 0 50px #168dff18;
+transform:translateY(-8px);
+}
+
+.popular{
+position:absolute;
+top:17px;
+left:17px;
+padding:5px 10px;
+background:#183b57;
+color:#a9e4ff;
+border-radius:30px;
+font-size:10px;
+font-weight:800;
+}
+
+.plan-name{
+font-size:14px;
+color:#a9c2d7;
+font-weight:800;
+}
+
+.plan-desc{
+font-size:11px;
+color:#8293a7;
+line-height:1.9;
+min-height:42px;
+margin:9px 0 20px;
+}
+
+.price{
+display:flex;
+align-items:baseline;
+gap:7px;
+margin-bottom:20px;
+}
+
+.price strong{
+font:800 35px Manrope,Cairo,sans-serif;
+letter-spacing:-1px;
+}
+
+.price span{
+color:#91a4b8;
+font-size:11px;
+}
+
+.price-list{
+list-style:none;
+padding:0;
+margin:0 0 24px;
+display:grid;
+gap:12px;
+}
+
+.price-list li{
+font-size:12px;
+color:#bdcbd8;
+display:flex;
+align-items:flex-start;
+gap:9px;
+}
+
+.price-list li:before{
+content:'✓';
+color:var(--cyan);
+font-weight:900;
+}
+
+.price-card .btn{
+width:100%;
+padding:12px;
+font-size:12px;
+}
+
+.price-note{
+text-align:center;
+color:#8292a5;
+font-size:10px;
+margin-top:19px;
+line-height:1.9;
+}
+
+/* PROCESS */
+
+.steps{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:13px;
+}
+
+.step{
+padding:22px;
+border:1px solid var(--line);
+border-radius:16px;
+background:#0d1521;
+}
+
+.step-no{
+font:800 24px Manrope,sans-serif;
+color:var(--cyan);
+}
+
+.step h3{
+font-size:14px;
+margin:8px 0 5px;
+}
+
+.step p{
+font-size:11px;
+line-height:1.9;
+color:var(--muted);
+margin:0;
+}
+
+/* ABOUT */
+
+.about-box{
+display:grid;
+grid-template-columns:1.15fr .85fr;
+gap:30px;
+align-items:center;
+padding:36px;
+border:1px solid var(--line);
+border-radius:22px;
+background:radial-gradient(ellipse at 0% 50%,#12416a35,transparent 55%),#0d1520;
+}
+
+.about-box h2{
+font-size:28px;
+margin:8px 0 12px;
+}
+
+.about-box p{
+color:var(--muted);
+font-size:13px;
+line-height:2.2;
+margin:0;
+}
+
+.about-mark{
+min-height:210px;
+display:grid;
+place-items:center;
+border:1px solid #4cbaff25;
+border-radius:18px;
+background:linear-gradient(135deg,#12243a,#0b111c);
+font:900 70px Manrope,sans-serif;
+letter-spacing:8px;
+color:#8ddfff;
+text-shadow:0 0 35px #279dff55;
+}
+
+/* CONTACT */
+
+.contact-panel{
+text-align:center;
+padding:52px 25px;
+border:1px solid #57bdff55;
+border-radius:24px;
+background:radial-gradient(ellipse at 50% 0%,#15527c55,transparent 65%),#0d1521;
+}
+
+.contact-panel h2{
+font-size:clamp(25px,4vw,37px);
+margin:8px 0;
+}
+
+.contact-panel p{
+max-width:620px;
+margin:0 auto 25px;
+color:var(--muted);
+font-size:13px;
+line-height:2;
+}
+
+.socials{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:13px;
+flex-wrap:wrap;
+margin-top:30px;
+}
+
+.social-link{
+width:49px;
+height:49px;
+display:grid;
+place-items:center;
+border:1px solid #5abfff3a;
+background:#101e2d;
+border-radius:15px;
+color:#b9eaff;
+transition:.25s;
+}
+
+.social-link:hover{
+transform:translateY(-5px);
+background:#173b59;
+border-color:#76d3ff;
+box-shadow:0 10px 28px #168dff2a;
+}
+
+.social-link svg{
+width:21px;
+height:21px;
+fill:none;
+stroke:currentColor;
+stroke-width:1.8;
+stroke-linecap:round;
+stroke-linejoin:round;
+}
+
+.social-link .fill{
+fill:currentColor;
+stroke:none;
+}
+
+.social-caption{
+margin-top:15px;
+font-size:10px;
+color:#8294a9;
+}
+
+/* FOOTER */
+
+footer{
+border-top:1px solid #ffffff10;
+padding:25px 0;
+color:#8292a5;
+font-size:11px;
+}
+
+.footer-inner{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.footer-brand{
+font:900 18px Manrope,sans-serif;
+letter-spacing:3px;
+color:#c5eaff;
+}
+
+.backtop{color:#a9dfff}
+
+/* ANIMATION */
+
+.reveal{
+opacity:0;
+transform:translateY(22px);
+transition:opacity .7s ease,transform .7s ease;
+}
+
+.reveal.visible{
+opacity:1;
+transform:translateY(0);
+}
+
+.toast{
+position:fixed;
+bottom:20px;
+left:50%;
+transform:translateX(-50%);
+padding:12px 18px;
+border-radius:12px;
+background:#142438;
+border:1px solid var(--line);
+color:#c9eaff;
+font-size:12px;
+display:none;
+z-index:99;
+}
+
+/* MOBILE */
+
+@media(max-width:850px){
+.nav-links{display:none}
+.services-grid{grid-template-columns:repeat(2,1fr)}
+.pricing-grid{grid-template-columns:1fr}
+.price-card.featured{transform:none}
+.steps{grid-template-columns:repeat(2,1fr)}
+.about-box{grid-template-columns:1fr}
+.about-mark{min-height:150px}
+}
+
+@media(max-width:560px){
+.container{width:calc(100% - 30px)}
+.hero{min-height:690px;padding:130px 0 75px}
+.hero-stats{gap:22px;margin-top:40px}
+.services-grid{grid-template-columns:1fr}
+.steps{grid-template-columns:1fr}
+section{padding:70px 0}
+.about-box{padding:24px}
+.footer-inner{justify-content:center;text-align:center}
+}
 </style>
 </head>
+
 <body>
 
-<header>
-<div class="container">
-<nav>
-<div class="brand"><span>A</span> ALEX</div>
-<div class="links">
+<header class="nav">
+<div class="container nav-inner">
+
+<a href="#home" class="brand">
+<span class="brand-symbol">A</span>
+ALEX
+</a>
+
+<nav class="nav-links">
 <a href="#home">الرئيسية</a>
 <a href="#services">الخدمات</a>
-<a href="#process">طريقة العمل</a>
+<a href="#pricing">الأسعار</a>
+<a href="#about">من نحن</a>
 <a href="#contact">تواصل معنا</a>
-</div>
-<a href="#contact" class="btn">اطلب خدمتك ↗</a>
 </nav>
+
+<div class="nav-side">
+<a href="#contact" class="nav-cta">ابدأ مشروعك ↗</a>
+
+<button class="menu-toggle" id="menuToggle"
+aria-label="فتح القائمة" aria-expanded="false">
+<span></span>
+<span></span>
+<span></span>
+</button>
+</div>
+
+</div>
+
+<div class="mobile-menu" id="mobileMenu">
+<a href="#home">الرئيسية</a>
+<a href="#services">الخدمات</a>
+<a href="#pricing">الباقات والأسعار</a>
+<a href="#process">طريقة العمل</a>
+<a href="#about">من نحن</a>
+<a href="#contact">تواصل معنا</a>
 </div>
 </header>
 
-<main id="home">
-<section class="hero">
-<div class="container">
-<div class="badge">✦ حلول رقمية احترافية</div>
-<img src="logo.jpeg" class="logo" alt="ALEX Logo">
-<h1>نحوّل أفكارك إلى <span class="gradient">واقع رقمي</span></h1>
-<p>مرحباً بك في ALEX، وجهتك للخدمات الرقمية وتصميم المواقع والأمن السيبراني. نساعدك على بناء حضور رقمي قوي ومميز.</p>
-<div class="actions">
-<a href="#services" class="btn">اكتشف خدماتنا ←</a>
-<a href="#contact" class="btn outline">تواصل معنا</a>
+<main>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+<div class="container hero-content">
+
+<div class="status">
+<i></i>
+استوديو إبداعي للحلول الرقمية
 </div>
+
+<img src="logo.png" class="hero-logo" alt="ALEX Logo">
+
+<h1>
+نصنع لك حضوراً رقمياً
+<span>يستحق أن يُرى</span>
+</h1>
+
+<p>
+نحوّل أفكارك إلى مواقع إلكترونية وهويات بصرية وتجارب رقمية
+احترافية. تصميم مميز، أداء سريع، وتفاصيل تصنع الفرق.
+</p>
+
+<div class="hero-actions">
+<a href="#services" class="btn">اكتشف خدماتنا ↗</a>
+<a href="#contact" class="btn btn-secondary">تواصل معنا</a>
+</div>
+
+<div class="hero-stats">
+<div class="stat">
+<strong>12+</strong>
+<span>خدمة رقمية</span>
+</div>
+
+<div class="stat">
+<strong>100%</strong>
+<span>اهتمام بالتفاصيل</span>
+</div>
+
+<div class="stat">
+<strong>24/7</strong>
+<span>استقبال الطلبات</span>
+</div>
+</div>
+
 </div>
 </section>
+
+<!-- SERVICES -->
 
 <section id="services">
 <div class="container">
-<div class="heading">
-<small>OUR SERVICES</small>
-<h2>خدماتنا <span class="gradient">الاحترافية</span></h2>
-<p>كل ما تحتاجه لمشروعك الرقمي في مكان واحد.</p>
+
+<div class="section-head reveal">
+<span class="kicker">WHAT WE DO</span>
+<h2>خدمات رقمية <span class="gradient">متكاملة</span></h2>
+<p>كل ما تحتاجه لتبني حضوراً رقمياً قوياً في مكان واحد.</p>
 </div>
 
-<div class="grid">
-<div class="card">
-<div class="icon">⌘</div>
-<h3>تصميم المواقع</h3>
-<p>تصميم مواقع احترافية ومتجاوبة مع جميع الأجهزة، مواقع شركات ومتاجر وصفحات شخصية.</p>
-<span class="tag">WEB DESIGN</span>
+<div class="services-grid">
+
+<div class="service reveal">
+<div class="service-top">
+<div class="service-icon">⌘</div>
+<span class="service-index">01 — WEB</span>
+</div>
+<h3>تصميم وتطوير المواقع</h3>
+<p>مواقع عصرية ومتجاوبة مع الجوال، بتجربة استخدام واضحة وسرعة ممتازة.</p>
+<span class="mini">Landing Pages • Business Websites</span>
 </div>
 
-<div class="card">
-<div class="icon">🛡</div>
-<h3>الأمن السيبراني</h3>
-<p>تقييم أمان المواقع والأنظمة، تقوية الحماية واكتشاف المخاطر الأمنية.</p>
-<span class="tag">CYBER SECURITY</span>
+<div class="service reveal">
+<div class="service-top">
+<div class="service-icon">✳</div>
+<span class="service-index">02 — BRAND</span>
+</div>
+<h3>الهوية البصرية والشعارات</h3>
+<p>شعار وهوية متناسقة تمنح مشروعك شخصية مميزة وسهلة التذكر.</p>
+<span class="mini">Logo • Brand Identity</span>
 </div>
 
-<div class="card">
-<div class="icon">⌕</div>
-<h3>اختبار الاختراق الأخلاقي</h3>
-<p>اختبار أمني مصرح به للمواقع والأنظمة بهدف اكتشاف الثغرات وإصلاحها.</p>
-<span class="tag">ETHICAL HACKING</span>
+<div class="service reveal">
+<div class="service-top">
+<div class="service-icon">▣</div>
+<span class="service-index">03 — UI / UX</span>
+</div>
+<h3>واجهات وتجربة المستخدم</h3>
+<p>تصميم واجهات مرتبة وسهلة الاستخدام للتطبيقات والمواقع والمنصات.</p>
+<span class="mini">Wireframes • UI Design</span>
 </div>
 
-<div class="card">
-<div class="icon">✦</div>
-<h3>تصميم الشعارات</h3>
-<p>تصميم شعارات وهويات بصرية احترافية تناسب علامتك التجارية.</p>
-<span class="tag">GRAPHIC DESIGN</span>
+<div class="service reveal">
+<div class="service-top">
+<div class="service-icon">◎</div>
+<span class="service-index">04 — SOCIAL</span>
+</div>
+<h3>تصميم محتوى السوشيال ميديا</h3>
+<p>منشورات وقوالب وإعلانات بصرية تحافظ على شكل علامتك التجارية.</p>
+<span class="mini">Posts • Stories • Ads</span>
 </div>
 
-<div class="card">
-<div class="icon">⚡</div>
-<h3>تحسين المواقع</h3>
-<p>تحسين سرعة المواقع وتجربة المستخدم وترتيب الصفحات.</p>
-<span class="tag">OPTIMIZATION</span>
+<div class="service reveal">
+<div class="service-top">
+<div class="service-icon">⌁</div>
+<span class="service-index">05 — SEO</span>
+</div>
+<h3>تحسين الظهور بمحركات البحث</h3>
+<p>تحسين أساسيات الموقع والعناوين والسرعة لمساعدة العملاء على الوصول إليك.</p>
+<span class="mini">Technical SEO • Performance</span>
 </div>
 
-<div class="card">
-<div class="icon">◎</div>
-<h3>تحسين محركات البحث</h3>
-<p>تحسين ظهور موقعك في نتائج البحث وتنظيم المحتوى والعناوين.</p>
-<span class="tag">SEO</span>
+<div class="service reveal">
+<div class="service-top">
+<div class="service-icon">⛨</div>
+<span class="service-index">06 — SECURITY</span>
+</div>
+<h3>مراجعة الأمان الرقمي</h3>
+<p>مراجعة إعدادات الأمان واكتشاف الأخطاء ضمن الأنظمة التي تملكها أو لديك تصريح بفحصها.</p>
+<span class="mini">Authorized Security Review</span>
 </div>
 
-<div class="card">
-<div class="icon">☁</div>
-<h3>الاستضافة والدومينات</h3>
-<p>المساعدة في ربط النطاقات والاستضافة وشهادات SSL.</p>
-<span class="tag">HOSTING</span>
+<div class="service reveal">
+<div class="service-top">
+<div class="service-icon">⚡</div>
+<span class="service-index">07 — SPEED</span>
+</div>
+<h3>تسريع وتحسين المواقع</h3>
+<p>تحسين الصور والملفات وتجربة التصفح لتصبح صفحاتك أخف وأسرع.</p>
+<span class="mini">Core Web Vitals • Optimization</span>
 </div>
 
-<div class="card">
-<div class="icon">♧</div>
-<h3>صيانة المواقع</h3>
-<p>تحديثات دورية ونسخ احتياطية وإصلاح المشاكل التقنية.</p>
-<span class="tag">MAINTENANCE</span>
+<div class="service reveal">
+<div class="service-top">
+<div class="service-icon">▤</div>
+<span class="service-index">08 — E-COM</span>
+</div>
+<h3>صفحات المنتجات والمتاجر</h3>
+<p>واجهات عرض منتجات وصفحات هبوط تساعد الزائر على فهم العرض بسهولة.</p>
+<span class="mini">Product Pages • Catalogs</span>
 </div>
 
-<div class="card">
-<div class="icon">▣</div>
-<h3>المتاجر الإلكترونية</h3>
-<p>إنشاء متاجر إلكترونية وعرض المنتجات وتنظيم الطلبات.</p>
-<span class="tag">E-COMMERCE</span>
+<div class="service reveal">
+<div class="service-top">
+<div class="service-icon">✉</div>
+<span class="service-index">09 — EMAIL</span>
+</div>
+<h3>صفحات التواصل والحجز</h3>
+<p>نماذج طلبات وحجز وتواصل منظمة لتسهيل استقبال استفسارات العملاء.</p>
+<span class="mini">Forms • Booking • Contact</span>
 </div>
 
-<div class="card">
-<div class="icon">📱</div>
-<h3>تصميم واجهات التطبيقات</h3>
-<p>تصميم واجهات UI/UX عصرية وسهلة الاستخدام.</p>
-<span class="tag">UI / UX</span>
+<div class="service reveal">
+<div class="service-top">
+<div class="service-icon">QR</div>
+<span class="service-index">10 — QR</span>
+</div>
+<h3>تصميم QR Code</h3>
+<p>رموز QR أنيقة تربط العملاء بموقعك أو قائمتك أو حساباتك بسهولة.</p>
+<span class="mini">QR • Digital Menus</span>
 </div>
 
-<div class="card">
-<div class="icon">⌁</div>
-<h3>حلول تقنية مخصصة</h3>
-<p>نماذج إلكترونية وصفحات حجز وقوائم QR وأدوات رقمية.</p>
-<span class="tag">CUSTOM SOLUTIONS</span>
+<div class="service reveal">
+<div class="service-top">
+<div class="service-icon">☁</div>
+<span class="service-index">11 — SETUP</span>
+</div>
+<h3>إعداد ونشر المواقع</h3>
+<p>رفع الموقع وربط الدومين وتجهيز أساسيات النشر والاستضافة المناسبة.</p>
+<span class="mini">Deployment • Domain Setup</span>
 </div>
 
-<div class="card">
-<div class="icon">🔒</div>
-<h3>حماية الحسابات</h3>
-<p>إرشادات لتأمين الحسابات وإعداد المصادقة الثنائية ومراجعة إعدادات الخصوصية.</p>
-<span class="tag">ACCOUNT SECURITY</span>
+<div class="service reveal">
+<div class="service-top">
+<div class="service-icon">✧</div>
+<span class="service-index">12 — SUPPORT</span>
 </div>
+<h3>الصيانة والتحديثات</h3>
+<p>تعديلات محتوى وتصحيح أخطاء وتحديثات حسب الاتفاق ونطاق المشروع.</p>
+<span class="mini">Maintenance • Updates</span>
 </div>
 
-<div class="note">
-<strong style="color:#42ddff">ملاحظة أمنية:</strong>
-جميع اختبارات الاختراق والفحوص الأمنية تتم فقط على المواقع والأنظمة التي يملكها العميل أو لديه تصريح واضح بفحصها. لا نقدم اختراق حسابات أو أجهزة الآخرين.
 </div>
 </div>
 </section>
+
+<!-- PRICING -->
+
+<section class="pricing-wrap" id="pricing">
+<div class="container">
+
+<div class="section-head reveal">
+<span class="kicker">SIMPLE PRICING</span>
+<h2>باقات واضحة، <span class="gradient">وقيمة حقيقية</span></h2>
+<p>أسعار بداية استرشادية — السعر النهائي يتحدد بعد معرفة تفاصيل طلبك.</p>
+</div>
+
+<div class="pricing-grid">
+
+<article class="price-card reveal">
+<div class="plan-name">STARTER / البداية</div>
+<p class="plan-desc">للمشاريع الصغيرة والأفكار التي تحتاج انطلاقة أنيقة.</p>
+
+<div class="price">
+<strong>199</strong>
+<span>ر.س — يبدأ من</span>
+</div>
+
+<ul class="price-list">
+<li>صفحة هبوط واحدة</li>
+<li>تصميم متجاوب للجوال</li>
+<li>قسم تعريفي وخدمات</li>
+<li>زر تواصل مباشر</li>
+<li>تعديلان بعد التسليم</li>
+</ul>
+
+<a class="btn btn-secondary" href="#contact" data-plan="باقة البداية">
+اطلب الباقة
+</a>
+</article>
+
+<article class="price-card featured reveal">
+<span class="popular">الأكثر طلباً</span>
+
+<div class="plan-name">PRO / الاحترافية</div>
+<p class="plan-desc">للأعمال التي تريد موقعاً متكاملاً يعكس جودة علامتها.</p>
+
+<div class="price">
+<strong>499</strong>
+<span>ر.س — يبدأ من</span>
+</div>
+
+<ul class="price-list">
+<li>حتى 5 صفحات للموقع</li>
+<li>تصميم مخصص وهوية متناسقة</li>
+<li>قسم خدمات وأسعار</li>
+<li>روابط التواصل الاجتماعي</li>
+<li>تهيئة SEO أساسية</li>
+<li>3 تعديلات بعد التسليم</li>
+</ul>
+
+<a class="btn" href="#contact" data-plan="الباقة الاحترافية">
+اطلب الباقة ↗
+</a>
+</article>
+
+<article class="price-card reveal">
+<div class="plan-name">PREMIUM / المميزة</div>
+<p class="plan-desc">حل مخصص للمشاريع التي تحتاج تفاصيل وخصائص إضافية.</p>
+
+<div class="price">
+<strong>899</strong>
+<span>ر.س — يبدأ من</span>
+</div>
+
+<ul class="price-list">
+<li>موقع متعدد الصفحات</li>
+<li>تصميم وتجربة مخصصة</li>
+<li>نماذج وخصائص حسب الطلب</li>
+<li>تحسين أداء متقدم</li>
+<li>إعداد النشر والدومين</li>
+<li>متابعة ما بعد التسليم</li>
+</ul>
+
+<a class="btn btn-secondary" href="#contact" data-plan="الباقة المميزة">
+اطلب الباقة
+</a>
+</article>
+
+</div>
+
+<p class="price-note">
+* الأسعار المعروضة أمثلة مبدئية بالريال السعودي ويمكن تعديلها قبل نشر الموقع.
+لا تشمل رسوم الدومين أو الاستضافة أو الخدمات الخارجية إن وجدت.
+</p>
+
+</div>
+</section>
+
+<!-- PROCESS -->
 
 <section id="process">
 <div class="container">
-<div class="heading">
-<small>HOW WE WORK</small>
-<h2>كيف نعمل؟</h2>
-<p>أربع خطوات بسيطة لإنجاز مشروعك.</p>
+
+<div class="section-head reveal">
+<span class="kicker">HOW IT WORKS</span>
+<h2>من الفكرة إلى <span class="gradient">الإطلاق</span></h2>
+<p>خطوات واضحة حتى تعرف ماذا يحدث في كل مرحلة.</p>
 </div>
+
 <div class="steps">
-<div class="step"><div class="number">01</div><h3>تواصل معنا</h3><p>أخبرنا عن فكرتك والخدمة التي تحتاجها.</p></div>
-<div class="step"><div class="number">02</div><h3>عرض السعر</h3><p>نحدد التكلفة والوقت المطلوب بوضوح.</p></div>
-<div class="step"><div class="number">03</div><h3>بدء العمل</h3><p>نبدأ بتنفيذ مشروعك ومتابعة التفاصيل.</p></div>
-<div class="step"><div class="number">04</div><h3>التسليم</h3><p>تستلم مشروعك بعد الانتهاء منه.</p></div>
+
+<div class="step reveal">
+<div class="step-no">01</div>
+<h3>نسمع فكرتك</h3>
+<p>ترسل تفاصيل مشروعك والهدف الذي تريد الوصول إليه.</p>
+</div>
+
+<div class="step reveal">
+<div class="step-no">02</div>
+<h3>نحدد الخطة</h3>
+<p>نقترح الشكل والخصائص والمدة والتكلفة قبل البدء.</p>
+</div>
+
+<div class="step reveal">
+<div class="step-no">03</div>
+<h3>نصمم ونطوّر</h3>
+<p>نعمل على التنفيذ ونشاركك التقدم للمراجعة.</p>
+</div>
+
+<div class="step reveal">
+<div class="step-no">04</div>
+<h3>نطلق مشروعك</h3>
+<p>نسلّمك النسخة النهائية ونوضح طريقة إدارتها.</p>
+</div>
+
 </div>
 </div>
 </section>
+
+<!-- ABOUT -->
+
+<section id="about">
+<div class="container">
+
+<div class="about-box reveal">
+
+<div>
+<span class="kicker">ABOUT ALEX</span>
+
+<h2>
+التفاصيل الصغيرة تصنع
+<span class="gradient">فرقاً كبيراً</span>
+</h2>
+
+<p>
+ALEX مساحة إبداعية للحلول الرقمية، نؤمن أن الموقع الناجح ليس مجرد شكل جميل؛
+بل تجربة واضحة، أداء جيد، ورسالة تصل للعميل.
+نعمل على تحويل أفكارك إلى حضور رقمي مرتب يعبر عن مشروعك.
+</p>
+</div>
+
+<div class="about-mark">ALEX</div>
+
+</div>
+</div>
+</section>
+
+<!-- CONTACT -->
 
 <section id="contact">
 <div class="container">
-<div class="cta">
-<h2>هل أنت مستعد لبدء مشروعك؟</h2>
-<p>أرسل طلبك الآن واحصل على عرض سعر يناسب احتياجاتك.</p>
-<button class="btn" onclick="openModal()">اطلب خدمة الآن ↗</button>
+
+<div class="contact-panel reveal">
+
+<span class="kicker">LET'S BUILD SOMETHING</span>
+
+<h2>جاهز تبدأ مشروعك؟</h2>
+
+<p>
+أرسل لنا فكرتك أو استفسارك عبر إحدى القنوات التالية،
+وسنرتب معك الخطوة المناسبة.
+</p>
+
+<a class="btn"
+href="mailto:YOUR-EMAIL@example.com?subject=ALEX%20Project%20Inquiry">
+راسلنا عبر البريد ↗
+</a>
+
+<div class="socials" aria-label="روابط التواصل">
+
+<!-- INSTAGRAM -->
+<a class="social-link"
+href="https://instagram.com/YOUR_INSTAGRAM"
+target="_blank"
+rel="noopener"
+aria-label="Instagram"
+title="Instagram">
+
+<svg viewBox="0 0 24 24">
+<rect x="3" y="3" width="18" height="18" rx="5"/>
+<circle cx="12" cy="12" r="4"/>
+<path d="M17.5 6.5h.01"/>
+</svg>
+
+</a>
+
+<!-- TIKTOK -->
+<a class="social-link"
+href="https://www.tiktok.com/@YOUR_TIKTOK"
+target="_blank"
+rel="noopener"
+aria-label="TikTok"
+title="TikTok">
+
+<svg viewBox="0 0 24 24">
+<path d="M14 3v11.2a4.2 4.2 0 1 1-3.5-4.14"/>
+<path d="M14 3c.5 3.1 2.3 5 5 5.4"/>
+</svg>
+
+</a>
+
+<!-- EMAIL -->
+<a class="social-link"
+href="mailto:YOUR-EMAIL@example.com"
+aria-label="Email"
+title="Email">
+
+<svg viewBox="0 0 24 24">
+<rect x="3" y="5" width="18" height="14" rx="2"/>
+<path d="m4 7 8 6 8-6"/>
+</svg>
+
+</a>
+
+<!-- WHATSAPP -->
+<a class="social-link"
+href="https://wa.me/000000000000"
+target="_blank"
+rel="noopener"
+aria-label="WhatsApp"
+title="WhatsApp">
+
+<svg viewBox="0 0 24 24">
+<path d="M20.2 11.7a8.2 8.2 0 0 1-12.1 7.2L3 20l1.2-4.8a8.2 8.2 0 1 1 16-3.5Z"/>
+<path d="M8.3 8.1c.4 2.7 2.4 4.8 5.2 5.6l1.4-1.3 2 .9c-.1 1.2-1 2-2.2 2-3.7-.2-7.1-3.5-7.3-7.1 0-1.1.8-2 1.9-2.1l1 2-1.2 2Z"/>
+</svg>
+
+</a>
+
+</div>
+
+<div class="social-caption">
+Instagram · TikTok · Email · WhatsApp
+</div>
+
 </div>
 </div>
 </section>
+
 </main>
 
+<!-- FOOTER -->
+
 <footer>
-<div class="brand"><span>A</span> ALEX</div>
-<p>WEB DESIGN & DIGITAL SERVICES</p>
-<p>© <span id="year"></span> ALEX - جميع الحقوق محفوظة</p>
+<div class="container footer-inner">
+
+<span class="footer-brand">ALEX</span>
+
+<span>
+© <span id="year"></span>
+ALEX Digital Studio. جميع الحقوق محفوظة.
+</span>
+
+<a class="backtop" href="#home">العودة للأعلى ↑</a>
+
+</div>
 </footer>
 
-<div class="modal" id="requestModal">
-<div class="modal-box">
-<button class="close" onclick="closeModal()">✕</button>
-<h2>طلب خدمة جديدة</h2>
-<form id="requestForm">
-<label>الاسم</label>
-<input id="name" required placeholder="اسمك">
-<label>وسيلة التواصل</label>
-<input id="contact" required placeholder="البريد أو رقم التواصل">
-<label>الخدمة</label>
-<select id="service" required>
-<option value="">اختر الخدمة</option>
-<option>تصميم موقع</option>
-<option>الأمن السيبراني</option>
-<option>اختبار اختراق أخلاقي مصرح به</option>
-<option>تصميم شعار</option>
-<option>متجر إلكتروني</option>
-<option>صيانة موقع</option>
-<option>خدمة أخرى</option>
-</select>
-<label>تفاصيل المشروع</label>
-<textarea id="details" placeholder="اكتب تفاصيل طلبك..."></textarea>
-<button class="btn" style="width:100%;margin-top:15px">إرسال الطلب</button>
-</form>
-</div>
+<div class="toast" id="toast">
+عدّل رابط التواصل أولاً داخل ملف index.html
 </div>
 
 <script>
-const modal=document.getElementById('requestModal');
-function openModal(){modal.classList.add('show')}
-function closeModal(){modal.classList.remove('show')}
+/* MENU */
 
-modal.addEventListener('click',e=>{
-if(e.target===modal)closeModal();
+const toggle = document.getElementById('menuToggle');
+const menu = document.getElementById('mobileMenu');
+
+toggle.addEventListener('click', () => {
+const open = menu.classList.toggle('open');
+
+toggle.classList.toggle('active', open);
+toggle.setAttribute('aria-expanded', open);
 });
 
-document.getElementById('year').textContent=new Date().getFullYear();
+menu.querySelectorAll('a').forEach(a => {
+a.addEventListener('click', () => {
+menu.classList.remove('open');
+toggle.classList.remove('active');
+toggle.setAttribute('aria-expanded', 'false');
+});
+});
 
-document.getElementById('requestForm').addEventListener('submit',function(e){
-e.preventDefault();
+/* CURRENT YEAR */
 
-const name=document.getElementById('name').value;
-const contact=document.getElementById('contact').value;
-const service=document.getElementById('service').value;
-const details=document.getElementById('details').value;
+document.getElementById('year').textContent =
+new Date().getFullYear();
 
-const message=`طلب خدمة جديد من ALEX
+/* SCROLL ANIMATION */
 
-الاسم: ${name}
-التواصل: ${contact}
-الخدمة: ${service}
-التفاصيل: ${details}`;
+const observer = new IntersectionObserver(entries => {
+entries.forEach(e => {
+if(e.isIntersecting){
+e.target.classList.add('visible');
+observer.unobserve(e.target);
+}
+});
+},{threshold:.12});
 
-const email='YOUR-EMAIL@example.com';
-window.location.href='mailto:'+email+
-'?subject='+encodeURIComponent('طلب خدمة ALEX')+
-'&body='+encodeURIComponent(message);
+document.querySelectorAll('.reveal').forEach(el => {
+observer.observe(el);
+});
+
+/* PACKAGE BUTTONS */
+
+document.querySelectorAll('[data-plan]').forEach(a => {
+a.addEventListener('click', () => {
+
+const subject = encodeURIComponent(
+'طلب ' + a.dataset.plan + ' من ALEX'
+);
+
+document.querySelector('.contact-panel .btn').href =
+'mailto:YOUR-EMAIL@example.com?subject=' + subject;
+
+});
 });
 </script>
 
+</body>
+</html>
