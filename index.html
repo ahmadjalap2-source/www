@@ -1,0 +1,289 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ALEX | Digital Services</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#070b12;color:#fff;font-family:Cairo,sans-serif}
+:root{--blue:#168dff;--cyan:#42ddff;--muted:#9aabba}
+.container{width:92%;max-width:1150px;margin:auto}
+header{position:sticky;top:0;background:#070b12ed;backdrop-filter:blur(15px);z-index:10;border-bottom:1px solid #42ddff30}
+nav{height:75px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-size:27px;font-weight:900;letter-spacing:3px}
+.brand span{color:var(--cyan)}
+nav a{color:white;text-decoration:none;margin:0 9px;font-size:14px}
+nav a:hover{color:var(--cyan)}
+.btn{display:inline-block;padding:13px 24px;border:0;border-radius:12px;background:linear-gradient(110deg,var(--cyan),var(--blue));color:#00101b;font-family:inherit;font-weight:900;text-decoration:none;cursor:pointer;transition:.3s}
+.btn:hover{transform:translateY(-4px);box-shadow:0 8px 30px #168dff66}
+.hero{text-align:center;padding:65px 15px 90px;background:radial-gradient(ellipse at top,#07334d,transparent 65%)}
+.logo{width:min(580px,95%);height:auto;display:block;margin:0 auto 25px;mix-blend-mode:screen;filter:drop-shadow(0 0 25px #00bfff55)}
+.badge{display:inline-block;padding:8px 18px;border:1px solid #42ddff55;border-radius:30px;color:var(--cyan);font-size:13px}
+h1{font-size:clamp(30px,5vw,55px);margin:20px 0}
+.gradient{background:linear-gradient(90deg,#fff,#42ddff,#168dff);-webkit-background-clip:text;color:transparent}
+.hero p{color:var(--muted);line-height:2;max-width:720px;margin:auto}
+.actions{margin-top:30px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.outline{background:transparent;color:var(--cyan);border:1px solid var(--cyan)}
+section{padding:75px 0}
+.heading{text-align:center;margin-bottom:35px}
+.heading small{color:var(--cyan);font-weight:bold}
+.heading h2{font-size:35px;margin:10px}
+.heading p{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:linear-gradient(145deg,#122338,#0a111c);border:1px solid #42ddff25;border-radius:20px;padding:25px;transition:.3s}
+.card:hover{transform:translateY(-7px);border-color:#42ddff88;box-shadow:0 15px 40px #0008}
+.icon{width:50px;height:50px;border-radius:14px;background:#0b2b40;color:var(--cyan);display:grid;place-items:center;font-size:24px;margin-bottom:15px}
+.card h3{margin-bottom:10px;font-size:18px}
+.card p{color:var(--muted);font-size:13px;line-height:2}
+.tag{color:var(--cyan);font-size:11px;background:#102b3a;padding:6px 12px;border-radius:20px;display:inline-block;margin-top:15px}
+.note{background:#0b1a27;border:1px solid #42ddff44;padding:18px;border-radius:14px;margin-top:25px;color:#c5dce8;font-size:13px;line-height:2}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.step{background:#101d2c;padding:20px;border:1px solid #42ddff25;border-radius:15px}
+.number{font-size:30px;color:var(--cyan);font-weight:900}
+.step h3{margin:8px 0}
+.step p{color:var(--muted);font-size:13px;line-height:1.8}
+.cta{text-align:center;padding:50px 20px;border:1px solid #42ddff55;border-radius:25px;background:radial-gradient(circle at top,#104263,#0b1420 70%)}
+.cta h2{font-size:32px;margin-bottom:15px}
+.cta p{color:var(--muted);line-height:2;margin-bottom:25px}
+footer{border-top:1px solid #42ddff22;padding:25px;text-align:center;color:var(--muted);font-size:12px}
+.modal{display:none;position:fixed;inset:0;background:#000d;z-index:20;align-items:center;justify-content:center;padding:15px}
+.modal.show{display:flex}
+.modal-box{background:#101d2c;padding:25px;border:1px solid #42ddff55;border-radius:20px;width:min(500px,100%)}
+.modal-box h2{margin-bottom:20px}
+.close{float:left;background:#172637;color:white;border:0;padding:7px 13px;border-radius:8px;cursor:pointer}
+label{display:block;font-size:13px;margin:12px 0 5px}
+input,select,textarea{width:100%;padding:13px;background:#07111c;border:1px solid #29465b;color:white;border-radius:10px;font:inherit}
+textarea{height:100px}
+@media(max-width:800px){.grid{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}nav a{font-size:11px;margin:0 3px}}
+@media(max-width:550px){.grid{grid-template-columns:1fr}nav{height:auto;min-height:65px}nav .links{display:none}.heading h2{font-size:27px}}
+</style>
+</head>
+<body>
+
+<header>
+<div class="container">
+<nav>
+<div class="brand"><span>A</span> ALEX</div>
+<div class="links">
+<a href="#home">الرئيسية</a>
+<a href="#services">الخدمات</a>
+<a href="#process">طريقة العمل</a>
+<a href="#contact">تواصل معنا</a>
+</div>
+<a href="#contact" class="btn">اطلب خدمتك ↗</a>
+</nav>
+</div>
+</header>
+
+<main id="home">
+<section class="hero">
+<div class="container">
+<div class="badge">✦ حلول رقمية احترافية</div>
+<img src="logo.jpeg" class="logo" alt="ALEX Logo">
+<h1>نحوّل أفكارك إلى <span class="gradient">واقع رقمي</span></h1>
+<p>مرحباً بك في ALEX، وجهتك للخدمات الرقمية وتصميم المواقع والأمن السيبراني. نساعدك على بناء حضور رقمي قوي ومميز.</p>
+<div class="actions">
+<a href="#services" class="btn">اكتشف خدماتنا ←</a>
+<a href="#contact" class="btn outline">تواصل معنا</a>
+</div>
+</div>
+</section>
+
+<section id="services">
+<div class="container">
+<div class="heading">
+<small>OUR SERVICES</small>
+<h2>خدماتنا <span class="gradient">الاحترافية</span></h2>
+<p>كل ما تحتاجه لمشروعك الرقمي في مكان واحد.</p>
+</div>
+
+<div class="grid">
+<div class="card">
+<div class="icon">⌘</div>
+<h3>تصميم المواقع</h3>
+<p>تصميم مواقع احترافية ومتجاوبة مع جميع الأجهزة، مواقع شركات ومتاجر وصفحات شخصية.</p>
+<span class="tag">WEB DESIGN</span>
+</div>
+
+<div class="card">
+<div class="icon">🛡</div>
+<h3>الأمن السيبراني</h3>
+<p>تقييم أمان المواقع والأنظمة، تقوية الحماية واكتشاف المخاطر الأمنية.</p>
+<span class="tag">CYBER SECURITY</span>
+</div>
+
+<div class="card">
+<div class="icon">⌕</div>
+<h3>اختبار الاختراق الأخلاقي</h3>
+<p>اختبار أمني مصرح به للمواقع والأنظمة بهدف اكتشاف الثغرات وإصلاحها.</p>
+<span class="tag">ETHICAL HACKING</span>
+</div>
+
+<div class="card">
+<div class="icon">✦</div>
+<h3>تصميم الشعارات</h3>
+<p>تصميم شعارات وهويات بصرية احترافية تناسب علامتك التجارية.</p>
+<span class="tag">GRAPHIC DESIGN</span>
+</div>
+
+<div class="card">
+<div class="icon">⚡</div>
+<h3>تحسين المواقع</h3>
+<p>تحسين سرعة المواقع وتجربة المستخدم وترتيب الصفحات.</p>
+<span class="tag">OPTIMIZATION</span>
+</div>
+
+<div class="card">
+<div class="icon">◎</div>
+<h3>تحسين محركات البحث</h3>
+<p>تحسين ظهور موقعك في نتائج البحث وتنظيم المحتوى والعناوين.</p>
+<span class="tag">SEO</span>
+</div>
+
+<div class="card">
+<div class="icon">☁</div>
+<h3>الاستضافة والدومينات</h3>
+<p>المساعدة في ربط النطاقات والاستضافة وشهادات SSL.</p>
+<span class="tag">HOSTING</span>
+</div>
+
+<div class="card">
+<div class="icon">♧</div>
+<h3>صيانة المواقع</h3>
+<p>تحديثات دورية ونسخ احتياطية وإصلاح المشاكل التقنية.</p>
+<span class="tag">MAINTENANCE</span>
+</div>
+
+<div class="card">
+<div class="icon">▣</div>
+<h3>المتاجر الإلكترونية</h3>
+<p>إنشاء متاجر إلكترونية وعرض المنتجات وتنظيم الطلبات.</p>
+<span class="tag">E-COMMERCE</span>
+</div>
+
+<div class="card">
+<div class="icon">📱</div>
+<h3>تصميم واجهات التطبيقات</h3>
+<p>تصميم واجهات UI/UX عصرية وسهلة الاستخدام.</p>
+<span class="tag">UI / UX</span>
+</div>
+
+<div class="card">
+<div class="icon">⌁</div>
+<h3>حلول تقنية مخصصة</h3>
+<p>نماذج إلكترونية وصفحات حجز وقوائم QR وأدوات رقمية.</p>
+<span class="tag">CUSTOM SOLUTIONS</span>
+</div>
+
+<div class="card">
+<div class="icon">🔒</div>
+<h3>حماية الحسابات</h3>
+<p>إرشادات لتأمين الحسابات وإعداد المصادقة الثنائية ومراجعة إعدادات الخصوصية.</p>
+<span class="tag">ACCOUNT SECURITY</span>
+</div>
+</div>
+
+<div class="note">
+<strong style="color:#42ddff">ملاحظة أمنية:</strong>
+جميع اختبارات الاختراق والفحوص الأمنية تتم فقط على المواقع والأنظمة التي يملكها العميل أو لديه تصريح واضح بفحصها. لا نقدم اختراق حسابات أو أجهزة الآخرين.
+</div>
+</div>
+</section>
+
+<section id="process">
+<div class="container">
+<div class="heading">
+<small>HOW WE WORK</small>
+<h2>كيف نعمل؟</h2>
+<p>أربع خطوات بسيطة لإنجاز مشروعك.</p>
+</div>
+<div class="steps">
+<div class="step"><div class="number">01</div><h3>تواصل معنا</h3><p>أخبرنا عن فكرتك والخدمة التي تحتاجها.</p></div>
+<div class="step"><div class="number">02</div><h3>عرض السعر</h3><p>نحدد التكلفة والوقت المطلوب بوضوح.</p></div>
+<div class="step"><div class="number">03</div><h3>بدء العمل</h3><p>نبدأ بتنفيذ مشروعك ومتابعة التفاصيل.</p></div>
+<div class="step"><div class="number">04</div><h3>التسليم</h3><p>تستلم مشروعك بعد الانتهاء منه.</p></div>
+</div>
+</div>
+</section>
+
+<section id="contact">
+<div class="container">
+<div class="cta">
+<h2>هل أنت مستعد لبدء مشروعك؟</h2>
+<p>أرسل طلبك الآن واحصل على عرض سعر يناسب احتياجاتك.</p>
+<button class="btn" onclick="openModal()">اطلب خدمة الآن ↗</button>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="brand"><span>A</span> ALEX</div>
+<p>WEB DESIGN & DIGITAL SERVICES</p>
+<p>© <span id="year"></span> ALEX - جميع الحقوق محفوظة</p>
+</footer>
+
+<div class="modal" id="requestModal">
+<div class="modal-box">
+<button class="close" onclick="closeModal()">✕</button>
+<h2>طلب خدمة جديدة</h2>
+<form id="requestForm">
+<label>الاسم</label>
+<input id="name" required placeholder="اسمك">
+<label>وسيلة التواصل</label>
+<input id="contact" required placeholder="البريد أو رقم التواصل">
+<label>الخدمة</label>
+<select id="service" required>
+<option value="">اختر الخدمة</option>
+<option>تصميم موقع</option>
+<option>الأمن السيبراني</option>
+<option>اختبار اختراق أخلاقي مصرح به</option>
+<option>تصميم شعار</option>
+<option>متجر إلكتروني</option>
+<option>صيانة موقع</option>
+<option>خدمة أخرى</option>
+</select>
+<label>تفاصيل المشروع</label>
+<textarea id="details" placeholder="اكتب تفاصيل طلبك..."></textarea>
+<button class="btn" style="width:100%;margin-top:15px">إرسال الطلب</button>
+</form>
+</div>
+</div>
+
+<script>
+const modal=document.getElementById('requestModal');
+function openModal(){modal.classList.add('show')}
+function closeModal(){modal.classList.remove('show')}
+
+modal.addEventListener('click',e=>{
+if(e.target===modal)closeModal();
+});
+
+document.getElementById('year').textContent=new Date().getFullYear();
+
+document.getElementById('requestForm').addEventListener('submit',function(e){
+e.preventDefault();
+
+const name=document.getElementById('name').value;
+const contact=document.getElementById('contact').value;
+const service=document.getElementById('service').value;
+const details=document.getElementById('details').value;
+
+const message=`طلب خدمة جديد من ALEX
+
+الاسم: ${name}
+التواصل: ${contact}
+الخدمة: ${service}
+التفاصيل: ${details}`;
+
+const email='YOUR-EMAIL@example.com';
+window.location.href='mailto:'+email+
+'?subject='+encodeURIComponent('طلب خدمة ALEX')+
+'&body='+encodeURIComponent(message);
+});
+</script>
+
